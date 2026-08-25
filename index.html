@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shaik Eammen | Mathematics & Computing</title>
+
+    <meta name="description"
+          content="Portfolio of Shaik Eammen, a Mathematics and Computing student interested in Data Science, Machine Learning, Artificial Intelligence and Research.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f8fafc;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Navigation */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 65px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: #4b5563;
+        }
+
+        .nav-links a:hover {
+            color: #111827;
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.7rem, 7vw, 5rem);
+            line-height: 1.05;
+            margin-bottom: 18px;
+            color: #111827;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 500;
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 1.05rem;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 20px;
+            border-radius: 8px;
+            border: 1px solid #111827;
+            font-weight: 600;
+        }
+
+        .button.primary {
+            background: #111827;
+            color: white;
+        }
+
+        .button.secondary {
+            background: white;
+            color: #111827;
+        }
+
+        .button:hover {
+            opacity: 0.85;
+        }
+
+        /* Sections */
+
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-child(even) {
+            background: #ffffff;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 35px;
+            color: #111827;
+        }
+
+        .section-intro {
+            max-width: 750px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        /* About */
+
+        .about-text {
+            max-width: 800px;
+            color: #4b5563;
+            font-size: 1.05rem;
+        }
+
+        /* Cards */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .card h4 {
+            margin-bottom: 5px;
+            color: #374151;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 14px;
+        }
+
+        .card p {
+            color: #4b5563;
+            margin-bottom: 10px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            color: #4b5563;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+        }
+
+        /* Skills */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-category {
+            padding: 22px;
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .skill-category p {
+            color: #4b5563;
+        }
+
+        /* Simple lists */
+
+        .simple-list {
+            list-style: none;
+            display: grid;
+            gap: 15px;
+        }
+
+        .simple-list li {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 18px 20px;
+        }
+
+        .simple-list strong {
+            color: #111827;
+        }
+
+        /* Contact */
+
+        .contact-box {
+            background: #111827;
+            color: white;
+            padding: 40px;
+            border-radius: 14px;
+        }
+
+        .contact-box h2 {
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: #d1d5db;
+            margin-bottom: 20px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-links a {
+            color: white;
+            border-bottom: 1px solid #9ca3af;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #6b7280;
+            font-size: 0.9rem;
+            background: #f8fafc;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 750px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 15px 0;
+                gap: 10px;
+            }
+
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .grid,
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Shaik Eammen</div>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+
+                <h1>Shaik Eammen</h1>
+
+                <h2>
+                    Mathematics &amp; Computing Student
+                </h2>
+
+                <p>
+                    Interested in Data Science, Machine Learning,
+                    Artificial Intelligence and Research.
+                    Currently pursuing a Bachelor of Technology
+                    in Mathematics and Computing at RGIPT.
+                </p>
+
+                <div class="buttons">
+                    <a class="button primary" href="#projects">
+                        View Projects
+                    </a>
+
+                    <a class="button secondary"
+                       href="https://github.com/EammenShaik"
+                       target="_blank">
+                        GitHub
+                    </a>
+
+                    <a class="button secondary"
+                       href="https://www.linkedin.com/in/eammen-shaik-71aa5a1b2"
+                       target="_blank">
+                        LinkedIn
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+
+            <h2 class="section-title">About Me</h2>
+
+            <p class="about-text">
+                I am a Bachelor of Technology student majoring in
+                Mathematics and Computing at Rajiv Gandhi Institute
+                of Petroleum Technology. My interests include
+                machine learning, artificial intelligence, data
+                analysis and research. I enjoy working on
+                data-driven problems and exploring machine learning
+                approaches for real-world applications.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- Education -->
+    <section id="education">
+        <div class="container">
+
+            <h2 class="section-title">Education</h2>
+
+            <div class="grid">
+
+                <div class="card">
+                    <h3>Rajiv Gandhi Institute of Petroleum Technology</h3>
+
+                    <h4>
+                        Bachelor of Technology — Mathematics and Computing
+                    </h4>
+
+                    <div class="date">
+                        Aug 2024 – Present
+                    </div>
+
+                    <p>
+                        CPI: 7.84
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <h3>FIITJEE Vijayawada</h3>
+
+                    <h4>
+                        Higher School Certificate (12th Grade)
+                    </h4>
+
+                    <div class="date">
+                        12th Percentage: 93%
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <h3>Kendriya Vidyalaya Tenali</h3>
+
+                    <h4>
+                        Secondary School Certificate (10th Grade)
+                    </h4>
+
+                    <div class="date">
+                        10th Percentage: 91%
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+
+            <h2 class="section-title">Skills</h2>
+
+            <div class="skills">
+
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <p>
+                        Python, C, C++, JavaScript, MATLAB
+                    </p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <p>
+                        Scikit-learn, Regression, Random Forest,
+                        Model Evaluation, Feature Analysis
+                    </p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Deep Learning</h3>
+                    <p>
+                        PyTorch, LSTM,
+                        Physics-Informed Neural Networks (PINNs)
+                    </p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Data Analysis</h3>
+                    <p>
+                        Pandas, NumPy, Matplotlib,
+                        Data Preprocessing, Exploratory Data Analysis
+                    </p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <p>
+                        Jupyter Notebook, VS Code, Git, GitHub
+                    </p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Web &amp; Design</h3>
+                    <p>
+                        HTML, CSS, JavaScript, Canva
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+
+            <h2 class="section-title">Experience</h2>
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <h3>Machine Learning Research Intern</h3>
+
+                    <h4>
+                        Rajiv Gandhi Institute of Petroleum Technology
+                    </h4>
+
+                    <div class="date">
+                        May 2026 – June 2026
+                    </div>
+
+                    <ul>
+                        <li>
+                            Developed an LSTM-based
+                            Physics-Informed Neural Network (PINN)
+                            for next-cycle State of Health (SoH)
+                            prediction of lithium-ion batteries.
+                        </li>
+
+                        <li>
+                            Performed data preprocessing, SoH
+                            computation, feature analysis and
+                            temporal sequence generation.
+                        </li>
+
+                        <li>
+                            Implemented LOOCV-based evaluation and
+                            compared the LSTM-PINN with an LSTM baseline.
+                        </li>
+
+                        <li>
+                            Developed a prototype for battery-level
+                            SoH prediction and actual-vs-predicted
+                            visualization.
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Contributor</h3>
+
+                    <h4>
+                        GirlScript Summer of Code
+                    </h4>
+
+                    <div class="date">
+                        July 2025 – October 2025
+                    </div>
+
+                    <p>
+                        Contributed to open-source projects through
+                        GirlScript Summer of Code and collaborated
+                        with the open-source community.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Graphic Designer</h3>
+
+                    <h4>
+                        Sakhii Care Foundation
+                    </h4>
+
+                    <div class="date">
+                        August 2025 – October 2025
+                    </div>
+
+                    <ul>
+                        <li>
+                            Created social media posts focused on
+                            women's health and menstrual health awareness.
+                        </li>
+
+                        <li>
+                            Designed informative visual content for
+                            publication on the organization's
+                            official Instagram page.
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+
+            <h2 class="section-title">Projects</h2>
+
+            <p class="section-intro">
+                Selected projects in machine learning and
+                data-driven applications.
+            </p>
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <h3>
+                        Battery State of Health Prediction using LSTM-PINN
+                    </h3>
+
+                    <div class="date">
+                        Machine Learning / Deep Learning
+                    </div>
+
+                    <ul>
+                        <li>
+                            Developed an LSTM-based Physics-Informed
+                            Neural Network for next-cycle State of
+                            Health prediction of lithium-ion batteries.
+                        </li>
+
+                        <li>
+                            Generated 20-cycle temporal input sequences
+                            from battery degradation data and performed
+                            preprocessing and normalization.
+                        </li>
+
+                        <li>
+                            Evaluated the model using LOOCV and compared
+                            its performance against an LSTM baseline.
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Positions of Responsibility -->
+    <section id="por">
+        <div class="container">
+
+            <h2 class="section-title">
+                Positions of Responsibility
+            </h2>
+
+            <ul class="simple-list">
+
+                <li>
+                    <strong>
+                        Editorial Team Member, GFG — RGIPT
+                    </strong>
+                    <br>
+                    2nd Year
+                </li>
+
+                <li>
+                    <strong>
+                        Social Media Team Member, S&amp;T Council — RGIPT
+                    </strong>
+                    <br>
+                    1st Year
+                </li>
+
+            </ul>
+
+        </div>
+    </section>
+
+
+    <!-- Achievements -->
+    <section id="achievements">
+        <div class="container">
+
+            <h2 class="section-title">
+                Achievements &amp; Extracurriculars
+            </h2>
+
+            <ul class="simple-list">
+
+                <li>
+                    <strong>Chess Competition Winner</strong>
+                    <br>
+                    Secured first place in the college sports fest
+                    chess competition.
+                </li>
+
+                <li>
+                    <strong>Kho Kho Team</strong>
+                    <br>
+                    Represented the college in inter-collegiate
+                    Kho Kho tournaments.
+                </li>
+
+                <li>
+                    <strong>Sponsorship Backend Team</strong>
+                    <br>
+                    Contributed to sponsorship coordination for
+                    the college cultural fest.
+                </li>
+
+            </ul>
+
+        </div>
+    </section>
+
+
+    <!-- Certifications -->
+    <section id="certifications">
+        <div class="container">
+
+            <h2 class="section-title">
+                Certifications
+            </h2>
+
+            <ul class="simple-list">
+
+                <li>
+                    <strong>
+                        Postman API Fundamentals
+                    </strong>
+                    <br>
+                    August 2025
+                </li>
+
+            </ul>
+
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+
+            <div class="contact-box">
+
+                <h2>Let's Connect</h2>
+
+                <p>
+                    Feel free to connect with me regarding
+                    opportunities, projects and collaboration.
+                </p>
+
+                <div class="contact-links">
+
+                    <a href="mailto:24mc3044@rgipt.ac.in">
+                        Email
+                    </a>
+
+                    <a href="https://github.com/EammenShaik"
+                       target="_blank">
+                        GitHub
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/eammen-shaik-71aa5a1b2"
+                       target="_blank">
+                        LinkedIn
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        © 2026 Shaik Eammen. All rights reserved.
+    </footer>
+
+</body>
+</html>
